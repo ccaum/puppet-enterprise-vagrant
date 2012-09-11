@@ -24,4 +24,8 @@ class base {
     ip => '33.33.33.12',
   }
 
+  file { '/etc/puppetlabs/puppet/auth.conf':
+    source => 'puppet:///modules/base/auth.conf',
+    notify => Service['pe-httpd'],
+  }
 }
